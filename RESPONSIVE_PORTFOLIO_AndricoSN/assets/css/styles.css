@@ -51,7 +51,7 @@
     --mb-3: 3rem;
 
 /* --------------- z index ---------------- */
-    --z-tooltip:10;
+    --z-tooltip: 10;
     --z-fixed: 100;
     --z-modal: 100;
 
@@ -147,6 +147,8 @@ img{
 }
 
 /* --------------REAUSABLE CSS CLASSES--------------- */
+
+/* ----------------------LAYOUT-------------------- */
 .container{
     max-width: 768px;
     margin-left: var(--mb-1-5);
@@ -161,7 +163,7 @@ img{
 .header{
     width: 100%;
     position: fixed;
-    bottom: 70px;
+    bottom: 0;
     left: 0;
     right: 0;
     z-index: var(--z-fixed);
@@ -199,15 +201,17 @@ img{
 
 @media screen and (max-width: 767px) {
     .nav__menu{
+        /* display: none; */
         position: fixed;
-        bottom: 0;
+        bottom: -100%;
         left: 0;
         width: 100%;
         background-color: var(--body-color);
         padding: 2rem 1.5rem 4rem;
-        box-shadow: 0 -1px 4px rgb(0,0,0,.15);
+        box-shadow: 0 -1px 4px rgb(0, 0, 0, 0.15);
         border-radius: 1.5rem 1.5rem 0 0;
         transition: .3s;
+        /* z-index: var(--z-fixed); */
     }
 }
 
@@ -229,3 +233,24 @@ img{
     color: var(--first-color);
 }
 
+.nav__icon{
+    font-size: 1.2rem;
+}
+
+.nav__close{
+    position: absolute;
+    right: 1.3rem;
+    bottom: .5rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--first-color);
+}
+
+.nav__close:hover{
+    color: var(--first-color-alt);
+}
+
+/* show menu */
+.show-menu{
+    bottom: 0;
+}
